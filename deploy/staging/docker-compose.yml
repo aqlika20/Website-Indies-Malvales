@@ -1,0 +1,10 @@
+# docker-compose.yml
+
+version: '3.7'
+services:
+  web_pls_fe:
+    container_name: web_pls_fe
+    restart: unless-stopped
+    image: web_pls_fe:staging
+    ports:
+      - '24001:3000'

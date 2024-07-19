@@ -1,0 +1,33 @@
+stages:
+  - build_and_publish
+  - pull_and_run
+
+build_and_publish:
+  only:
+    - staging
+    - beta
+    - production
+  stage: build_and_publish
+  tags:
+    - cerah
+  before_script:
+    - echo "$GITLAB_PWD" | sudo docker login -u "$GITLAB_UNAME" --password-stdin registry.gitlab.com
+  script:
+    - sudo cp ./deploy/$CI_COMMIT_BRANCH/env .env
+    - sudo docker build -t registry.gitlab.com/cerah-website/website:$CI_COMMIT_BRANCH --build-arg branch=$CI_COMMIT_BRANCH .
+    - sudo docker push registry.gitlab.com/cerah-website/website:$CI_COMMIT_BRANCH
+
+pull_and_run:
+  only:
+    - staging
+    - beta
+  stage: pull_and_run
+  tags:
+    - cerah
+  before_script:
+    - echo "$GITLAB_PWD" | sudo docker login -u "$GITLAB_UNAME" --password-stdin registry.gitlab.com
+  script:
+    - cd deploy/$CI_COMMIT_BRANCH
+    - sudo docker-compose pull
+    - sudo docker-compose up -d
+    - sudo docker image prune -f

@@ -1,0 +1,8 @@
+SERVER_DOMAIN=pls-cms.mayantara.co.id
+SERVER_URL=https://pls-cms.mayantara.co.id
+NEXT_PUBLIC_API_URL=https://pls-cms.mayantara.co.id/api
+NEXT_PUBLIC_APP_URL_IMAGE=https://pls-cms.mayantara.co.id/storage
+
+NEXT_PUBLIC_APP_BASE_URL=https://pls.mayantara.co.id
+#production_only
+NEXT_PUBLIC_GTM_ID=

@@ -1,0 +1,8 @@
+SERVER_DOMAIN=cms.pls.co.id
+SERVER_URL=https://cms.pls.co.id
+NEXT_PUBLIC_API_URL=https://cms.pls.co.id/api
+NEXT_PUBLIC_APP_URL_IMAGE=https://cms.pls.co.id/storage
+
+NEXT_PUBLIC_APP_BASE_URL=https://pls.co.id
+#production_only
+NEXT_PUBLIC_GTM_ID=
