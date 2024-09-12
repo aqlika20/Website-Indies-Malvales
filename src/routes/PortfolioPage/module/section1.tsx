@@ -134,7 +134,7 @@ const Section1 = ({}: any) => {
                   <div css={row3}>
                     <Row style={{ paddingRight: '10px', paddingLeft: '10px' }}>
                       {e.hashtag_id === null && e.hashtag_en === null ? (
-                        <div></div>
+                        <div />
                       ) : locale === 'id' ? (
                         e.hashtag_id
                           .split(',')
@@ -194,7 +194,7 @@ const Section1 = ({}: any) => {
           ))
         )}
         {Number(postPerPage) / Number(portfolio.total) >= 1 ? (
-          <div></div>
+          <div />
         ) : (
           <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={setCurrentPage} />
         )}

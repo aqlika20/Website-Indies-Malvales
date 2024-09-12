@@ -56,7 +56,7 @@ const Footer = () => {
           <Col css={col2} md={2}>
             <div css={title}>Sitemaps</div>
             {listnav?.length === 0 ? (
-              <div></div>
+              <div />
             ) : (
               listnav?.map((datas: any) => (
                 <div key={datas.id.toString()}>
