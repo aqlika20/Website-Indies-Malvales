@@ -126,7 +126,7 @@ const Section1 = () => {
                   <Row>
                     {e.hashtag_id === null && e.hashtag_en === null ? (
                       <div css={{ width: 'fit-content' }}>
-                        <div></div>
+                        <div />
                       </div>
                     ) : locale === 'id' ? (
                       e.hashtag_id.split(',').map((hashtag, index) => (
@@ -172,7 +172,7 @@ const Section1 = () => {
           </div>
         )}
         {Number(postPerPage) / Number(news.total) >= 1 ? (
-          <div></div>
+          <div />
         ) : (
           <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={setCurrentPage} />
         )}

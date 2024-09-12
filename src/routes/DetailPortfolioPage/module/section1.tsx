@@ -64,7 +64,7 @@ const Section1 = ({}: any) => {
           src={`${API_URL_IMAGE}/${locale === 'id' ? data.image_id : data.image_en}`}
           css={imgBg}
         />
-        <div css={filter}></div>
+        <div css={filter} />
       </div>
       <Container css={divSec1} fluid>
         <div css={row1}>
@@ -73,9 +73,9 @@ const Section1 = ({}: any) => {
               <div css={divcat}>
                 <Row style={{ paddingRight: '10px', paddingLeft: '10px' }}>
                   {data?.length === 0 ? (
-                    <div></div>
+                    <div />
                   ) : data.hashtag_id === null && data.hashtag_en === null ? (
-                    <div></div>
+                    <div />
                   ) : locale === 'id' ? (
                     data.hashtag_id.split(',').map((hashtag: string, index: number) => (
                       <button key={index} css={topicBubble} onClick={() => handleClickHashtag(hashtag)}>
@@ -109,7 +109,7 @@ const Section1 = ({}: any) => {
                   <div css={topicdesc}>
                     {ReactHtmlParser(locale === 'id' ? data.article_detail_id : data.article_detail_en)}
                     {data.url_source_id === null && data.url_source_en === null ? (
-                      <div></div>
+                      <div />
                     ) : (
                       <div>
                         Source:{' '}
@@ -119,7 +119,7 @@ const Section1 = ({}: any) => {
                       </div>
                     )}
                     {data.file_id_url === null && data.file_en_url === null ? (
-                      <div></div>
+                      <div />
                     ) : (
                       <a
                         css={{ textDecoration: 'none', width: 'auto' }}
@@ -152,13 +152,13 @@ const Section1 = ({}: any) => {
                 <Col css={col2content} md={4}>
                   <Row css={divcat2}>
                     {portfolioList?.rows.length === 0 ? (
-                      <div css={{ display: 'none' }}></div>
+                      <div css={{ display: 'none' }} />
                     ) : (
                       portfolioList?.rows.map((e: any) => (
                         <div key={e.id}>
                           <Row style={{ paddingRight: '10px', paddingLeft: '10px' }}>
                             {e.hashtag_id === null && e.hashtag_en === null ? (
-                              <div></div>
+                              <div />
                             ) : locale === 'id' ? (
                               e.hashtag_id
                                 .split(',')
